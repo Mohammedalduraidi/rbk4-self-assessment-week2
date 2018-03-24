@@ -9,11 +9,13 @@ $.ajaxPrefilter(function(settings, _, jqXHR) {
 var SERVER_URL = 'http://parse.shared.hackreactor.com/chatterbox/classes/messages';
 
 //This one calls the Parse server to grab data, and sends it to processData
-var getData = function() {
+var getData = function() { //we might need to use "GET" Requests When Appropriate or maybe we can reduce the amount of Data transmitted!
+                          
   $.ajax(SERVER_URL + '?order=-createdAt', {
     contentType: 'application/json',
     success: function(data) {
       processData(data); // eslint-disable-line no-use-before-define
+
     },
     error: function(data) {
       $('#error').prepend(' oh no').append('!');
