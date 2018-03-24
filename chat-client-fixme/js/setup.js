@@ -3,12 +3,13 @@ $.ajaxPrefilter(function(settings, _, jqXHR) {
   jqXHR.setRequestHeader('X-Parse-Application-Id', '5ec0221ee8b439a1fc8fdfd6a638b3e6af1cb1b4');
   jqXHR.setRequestHeader('X-Parse-REST-API-Key', 'bbfaf2b05152043f1b8207ba13c600d4bf296795');
 });
-
+//
 //-------------- BEGIN VARIABLE/FUNCTION DECLARATIONS ---------------------
 
 var SERVER_URL = 'http://parse.shared.hackreactor.com/chatterbox/classes/messages';
 
 //This one calls the Parse server to grab data, and sends it to processData
+                            //MY COMMENT :-
 var getData = function() { //we might need to use "GET" Requests When Appropriate or maybe we can reduce the amount of Data transmitted!
                           
   $.ajax(SERVER_URL + '?order=-createdAt', {
